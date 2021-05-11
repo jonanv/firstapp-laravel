@@ -46,13 +46,33 @@ Route::get('saludo/{nombre?}', function($nombre = 'Invitado') {
 
 
 // // Rutas con nombre
-Route::get('contactame', function() {
-    return 'Sección de contactos';
-})->name('contactos');
+// Route::get('contactame', function() {
+//     return 'Sección de contactos';
+// })->name('contactos');
 
-Route::get('/', function() {
-    echo '<a href="' . route('contactos') . '">Contactos 1</a><br>';
-    echo '<a href="' . route('contactos') . '">Contactos 2</a><br>';
-    echo '<a href="' . route('contactos') . '">Contactos 3</a><br>';
-    echo '<a href="' . route('contactos') . '">Contactos 4</a><br>';
-});
+// Route::get('/', function() {
+//     echo '<a href="' . route('contactos') . '">Contactos 1</a><br>';
+//     echo '<a href="' . route('contactos') . '">Contactos 2</a><br>';
+//     echo '<a href="' . route('contactos') . '">Contactos 3</a><br>';
+//     echo '<a href="' . route('contactos') . '">Contactos 4</a><br>';
+// });
+
+
+// // Como mostrar HTML con las vistas y pasar datos a la vistas
+// Route::get('/', function() {
+//     $nombre = 'Giovanni';
+//     // return view('home')->with('nombre', $nombre);
+//     // return view('home')->with(['nombre' => $nombre]);
+//     // return view('home', ['nombre' => $nombre]);
+//     return view('home', compact('nombre')); // Debe de tener el mismo nombre de la variable
+// })->name('home');
+
+// $nombre = 'Giovanni';
+// Route::view('/', 'home')->name('home'); // Politicas de privacidad, terminos y condiciones
+// Route::view('/', 'home', ['nombre' => 'Giovanni'])->name('home');
+// Route::view('/', 'home', ['nombre' => $nombre])->name('home');
+
+Route::view('/', 'home')->name('home');
+Route::view('/about', 'about')->name('about');
+Route::view('/contact', 'contact')->name('contact');
+Route::view('/portfolio', 'portfolio')->name('portfolio');
