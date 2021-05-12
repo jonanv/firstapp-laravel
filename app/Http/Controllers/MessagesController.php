@@ -10,8 +10,15 @@ class MessagesController extends Controller
         // return 'procesar formulario';
         // return $request;
         // return $request->get('name');
-        return request('name');
+        // return request('name');
 
-
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            // 'email' => ['required', 'email'],
+            'subject' => 'required',
+            'content' => 'required|min:3'
+        ]);
+        return 'Datos validados';
     }
 }

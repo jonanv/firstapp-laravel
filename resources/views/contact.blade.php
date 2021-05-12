@@ -24,7 +24,7 @@
         <input type="text" name="name" placeholder="Nombre..." value="{{ old('name') }}"> {{-- required --}}
         <br>
         {{-- {{ $errors->first('name') }}<br> --}}
-        {!! $errors->first('name', '<small>:message</small>') !!}<br>
+        {!! $errors->first('name', '<small>:message</small>') !!}<br> {{-- Los !! son para imprimir etiquetas HTML --}}
 
         <input type="text" name="email" placeholder="Email..." value="{{ old('email') }}">
         <br>
