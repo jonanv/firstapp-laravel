@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Funcion anonima o Closure
-Route::get('/', function() {
-    return 'Hola desde la pagina de inicio';
-});
+// Route::get('/', function() {
+//     return 'Hola desde la pagina de inicio';
+// });
 
 // Route::get('contacto', function() {
 //     return 'Hola desde la pagina de contacto';
@@ -34,15 +35,15 @@ Route::get('/', function() {
 // Route::puth();
 // Route::delete();
 
-// Parametro obligatorio
-Route::get('saludo/{nombre}', function($nombre) {
-    return 'Saludos ' . $nombre;
-});
+// // Parametro obligatorio
+// Route::get('saludo/{nombre}', function($nombre) {
+//     return 'Saludos ' . $nombre;
+// });
 
-// Parametro opcional
-Route::get('saludo/{nombre?}', function($nombre = 'Invitado') {
-    return 'Saludos ' . $nombre;
-});
+// // Parametro opcional
+// Route::get('saludo/{nombre?}', function($nombre = 'Invitado') {
+//     return 'Saludos ' . $nombre;
+// });
 
 
 // // Rutas con nombre
@@ -74,14 +75,18 @@ Route::get('saludo/{nombre?}', function($nombre = 'Invitado') {
 
 
 // // Estructuras de control con Blade
-$portfolio = [
-    ['title' => 'Proyecto #1'],
-    ['title' => 'Proyecto #2'],
-    ['title' => 'Proyecto #3'],
-    ['title' => 'Proyecto #4'],
-];
+// $portfolio = [
+//     ['title' => 'Proyecto #1'],
+//     ['title' => 'Proyecto #2'],
+//     ['title' => 'Proyecto #3'],
+//     ['title' => 'Proyecto #4'],
+// ];
 
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
-Route::view('/portfolio', 'portfolio', compact('portfolio'))->name('portfolio');
+
+// Route::view('/portfolio', 'portfolio', compact('portfolio'))->name('portfolio'); // Controlador por defecto y pasa la variable portafolio (que es el array) => Illuminate\Routing\ViewController
+                                                                                // Controlador vario por defecto => php artisan make:controller PortfolioController
+
+Route::get('/portfolio', PortfolioController::class)->name('portfolio');     // Controlador con el metodo __invoke => php artisan make:controller PortfolioController -i

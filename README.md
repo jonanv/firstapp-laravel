@@ -96,3 +96,27 @@ php artisan --version
 ```php
 brew services start mysql@5.7
 ```
+
+## Show route list
+```php
+php artisan route:list
+```
+or
+```php
+php artisan r:l
+```
+
+## Create controller
+### Help
+```php
+php artisan make:controller PortfolioController -h
+```
+
+```php
+php artisan make:controller PortfolioController
+```
+
+-i, --invokable, Generate a single method, invokable controller class.
+```php
+php artisan make:controller PortfolioController -i
+```
