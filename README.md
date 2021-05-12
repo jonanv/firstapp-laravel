@@ -120,3 +120,9 @@ php artisan make:controller PortfolioController
 ```php
 php artisan make:controller PortfolioController -i
 ```
+
+--api, Exclude the create and edit methods from the controller.
+```php
+php artisan make:controller PortfolioController --api
+```
+
