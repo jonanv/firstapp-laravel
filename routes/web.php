@@ -72,7 +72,16 @@ Route::get('saludo/{nombre?}', function($nombre = 'Invitado') {
 // Route::view('/', 'home', ['nombre' => 'Giovanni'])->name('home');
 // Route::view('/', 'home', ['nombre' => $nombre])->name('home');
 
+
+// // Estructuras de control con Blade
+$portfolio = [
+    ['title' => 'Proyecto #1'],
+    ['title' => 'Proyecto #2'],
+    ['title' => 'Proyecto #3'],
+    ['title' => 'Proyecto #4'],
+];
+
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
-Route::view('/portfolio', 'portfolio')->name('portfolio');
+Route::view('/portfolio', 'portfolio', compact('portfolio'))->name('portfolio');

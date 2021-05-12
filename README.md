@@ -87,6 +87,11 @@ or
 composer create-project laravel/laravel 'name-project'
 ```
 
+## Version Laravel in folder project
+```php
+php artisan --version 
+```
+
 ## Start database
 ```php
 brew services start mysql@5.7
