@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
@@ -99,3 +100,5 @@ Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio.
 // Route::apiResource('/proyectos', PortfolioController::class);     // Controlador api con solo 5 metodos del controlador resource (no tiene los metodos create y edit) => php artisan make:controller PortfolioController --api
 // Route::apiResource('/portfolio', PortfolioController::class)->only(['index', 'show']);     // Controlador api con solo 5 metodos del controladore resource (no tiene los metodos create y edit) => php artisan make:controller PortfolioController --api
 // Route::apiResource('/portfolio', PortfolioController::class)->except(['index', 'show']);     // Controlador api con solo 5 metodos del controladore resource (no tiene los metodos create y edit) => php artisan make:controller PortfolioController --api
+
+Route::post('contact', [MessagesController::class, 'store'])->name('contact.store');

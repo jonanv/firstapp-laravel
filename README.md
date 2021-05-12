@@ -126,3 +126,7 @@ php artisan make:controller PortfolioController -i
 php artisan make:controller PortfolioController --api
 ```
 
+Generating optimized autoload files
+```php
+composer dumpautoload
+```
