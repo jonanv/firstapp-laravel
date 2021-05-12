@@ -89,4 +89,13 @@ Route::view('/contact', 'contact')->name('contact');
 // Route::view('/portfolio', 'portfolio', compact('portfolio'))->name('portfolio'); // Controlador por defecto y pasa la variable portafolio (que es el array) => Illuminate\Routing\ViewController
                                                                                 // Controlador vario por defecto => php artisan make:controller PortfolioController
 
-Route::get('/portfolio', PortfolioController::class)->name('portfolio');     // Controlador con el metodo __invoke => php artisan make:controller PortfolioController -i
+// Route::get('/portfolio', PortfolioController::class)->name('portfolio');     // Controlador con el metodo __invoke => php artisan make:controller PortfolioController -i
+
+// Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');  // Controlador con los 7 metodos REST => php artisan make:controller PortfolioController -r
+Route::resource('portfolio', PortfolioController::class); // Asi aparecen todos los metodos del controlador => php artisan make:controller PortfolioController -r
+// Route::resource('portfolio', PortfolioController::class)->only(['index', 'show']); // Asi aparecen solo los metodos index y show del controlador => php artisan make:controller PortfolioController -r
+// Route::resource('portfolio', PortfolioController::class)->except(['index', 'show']); // Asi aparecen todos los metodos excepto index y show del controlador => php artisan make:controller PortfolioController -r
+
+// Route::apiResource('/portfolio', PortfolioController::class);     // Controlador api con solo 5 metodos del controladore resource (no tiene los metodos create y edit) => php artisan make:controller PortfolioController --api
+// Route::apiResource('/portfolio', PortfolioController::class)->only(['index', 'show']);     // Controlador api con solo 5 metodos del controladore resource (no tiene los metodos create y edit) => php artisan make:controller PortfolioController --api
+// Route::apiResource('/portfolio', PortfolioController::class)->except(['index', 'show']);     // Controlador api con solo 5 metodos del controladore resource (no tiene los metodos create y edit) => php artisan make:controller PortfolioController --api
