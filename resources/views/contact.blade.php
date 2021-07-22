@@ -8,7 +8,7 @@
     {{-- {{ $errors }} --}}
     {{-- {{ var_dump($errors->any()) }} --}}
     <ul>
-
+        {{-- Itera todos los mensajes de error --}}
         @if ($errors->any())
             {{-- {{ var_dump($errors->all()) }} --}}
             @foreach ($errors->all() as $error)

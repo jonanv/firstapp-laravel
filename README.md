@@ -116,17 +116,17 @@ php artisan make:controller PortfolioController -h
 php artisan make:controller PortfolioController
 ```
 
--i, --invokable, Generate a single method, invokable controller class.
+`-i, --invokable, Generate a single method, invokable controller class.`
 ```php
 php artisan make:controller PortfolioController -i
 ```
 
---api, Exclude the create and edit methods from the controller.
+`--api, Exclude the create and edit methods from the controller.`
 ```php
 php artisan make:controller PortfolioController --api
 ```
 
-Generating optimized autoload files
+`Generating optimized autoload files`
 ```php
 composer dumpautoload
 ```
